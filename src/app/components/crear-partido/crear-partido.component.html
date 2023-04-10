@@ -1,0 +1,41 @@
+<div class="container mt-3">
+    <div class="card">
+        
+        <div class="card-body">
+           
+            <h3 class="titulo">REGISTRAR PARTIDO</h3>
+            <div class="mb-3">
+          
+              <form class="mt-3" action="" (ngSubmit)="registrarPartido()" [formGroup]="partidoForm" >
+
+                <input type="text"
+                class="form-control mt-2" formControlName="nombreLocal" placeholder="Local">   
+
+                <input type="text"
+                class="form-control mt-2" formControlName="nombreVisita" placeholder="Visita">   
+
+                <input type="number"
+                class="form-control mt-2" formControlName="cuotaLocal" placeholder="Cuota de Local">   
+                
+                <input type="number"
+                class="form-control mt-2" formControlName="cuotaEmpate" placeholder="Cuota de Empate">   
+
+                <input type="number"
+                class="form-control mt-2" formControlName="cuotaVisita" placeholder="Cuota de Visita">   
+
+                <input type="number"
+                class="form-control mt-2" formControlName="marcadorLocal" placeholder="Marcador de Local">   
+
+                <input type="number"
+                class="form-control mt-2" formControlName="marcadorVisita" placeholder="Marcador de Visita">   
+
+                <button [disabled]="partidoForm.invalid" type="submit" class="btn btn-success mt-3 float-start">Guardar</button>
+                <button type="button" class="btn btn-danger mt-3 float-end" routerLink="/">volver</button>
+                
+              </form>          
+            </div>
+        </div>
+      
+    </div>
+    </div>
+    

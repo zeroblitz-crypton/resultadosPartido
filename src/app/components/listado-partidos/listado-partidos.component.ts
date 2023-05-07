@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Partido } from 'src/app/models/Partido';
 import { PartidoServicesService } from 'src/app/services/partido-services.service';
 import { NgModule } from '@angular/core';
+import { FichaAlumno } from 'src/app/models/fichaAlumno';
 
 @Component({
   selector: 'app-listado-partidos',
@@ -9,8 +10,8 @@ import { NgModule } from '@angular/core';
   styleUrls: ['./listado-partidos.component.scss']
 })
 export class ListadoPartidosComponent implements OnInit {
-  listadoPartidos:Partido[]=[]
-  auxlistadoPartidos:Partido[]=[]
+  listadoFichaAlumno:FichaAlumno[]=[]
+  auxlistadoFichaAlumno:FichaAlumno[]=[]
   searchText=""
   constructor(private partidosService:PartidoServicesService){
 
@@ -22,9 +23,9 @@ export class ListadoPartidosComponent implements OnInit {
 
   obtenerPartidos(){
     this.partidosService.getPartidos().subscribe(res=>{
-      this.listadoPartidos=res
-      this.auxlistadoPartidos=res
-      console.log(this.auxlistadoPartidos);
+      this.listadoFichaAlumno=res
+      this.auxlistadoFichaAlumno=res
+      console.log(this.auxlistadoFichaAlumno);
       
     })
   }
@@ -43,11 +44,16 @@ export class ListadoPartidosComponent implements OnInit {
     
   }
   searchPartido(){
-  this.listadoPartidos = this.auxlistadoPartidos.filter(partido=>partido.nombrePartido.toLowerCase().includes(this.searchText.toLowerCase()))
+  this.listadoFichaAlumno = this.auxlistadoFichaAlumno.filter(partido=>partido.nombres.toLowerCase().includes(this.searchText.toLowerCase()) || partido.apellidos.toLowerCase().includes(this.searchText.toLowerCase()) || partido.documentoIdentidad.toLowerCase().includes(this.searchText.toLowerCase()))
   }
   limpiarCampo(){
     this.searchText=""
     this.obtenerPartidos()
+  }
+  eliminarAlumno(alumno:any){
+    this.partidosService.eliminarPartido(alumno._id).subscribe(data=>{
+      this.obtenerPartidos()
+    })
   }
 
 }

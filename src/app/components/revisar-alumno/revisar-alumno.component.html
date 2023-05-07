@@ -1,0 +1,185 @@
+<div class="container mt-3">
+    <div class="card">
+        <h4 class="card-title text-center mt-3">FICHA DE MATRICULA</h4>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col" class="text-center bg-dark text-light" colspan="4">DATOS DE LA INSTITUCIÒN</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="">
+                        <td class="bg-dark text-light">AÑO</td>
+                        <td>2023</td>
+                        <td class="bg-dark text-light">CODIGO DE MATRICULA</td>
+                        <td>R1C3</td>
+                    </tr>                
+                </tbody>
+            </table>
+          </div>
+
+          <div class="table-responsive mt-3">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th class="bg-dark text-light">:</th>
+                        <th scope="col" class="text-center " colspan="3">MANUEL TRINIDAD CALLE ESCAJADILLO</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="">
+                        <td class="bg-dark text-light">GESTION</td>
+                        <td>PUBLICA</td>
+                        <td class="bg-dark text-light">DRE</td>
+                        <td>AYACUCHO</td>
+                    </tr>     
+                    <tr class="">
+                        <td class="bg-dark text-light">UGEL</td>
+                        <td>LUCANAS - PUQUIO</td>
+                        <td class="bg-dark text-light">REGION</td>
+                        <td>AYACUCHO</td>
+                    </tr>     
+                    <tr class="">
+                        <td class="bg-dark text-light">PROVINCIA</td>
+                        <td>LUCANAS</td>
+                        <td class="bg-dark text-light">DISTRITO</td>
+                        <td>PUQUIO</td>
+                    </tr>    
+                    <tr class="">
+                        <td class="bg-dark text-light">LUGAR</td>
+                        <td>PUQUIO</td>
+                        <td class="bg-dark text-light">DIRECCION(Av, Jr, Calle)</td>
+                        <td>JIRON SANCOS Nº 140</td>
+                    </tr>           
+                </tbody>
+            </table>
+          </div>
+           
+        </div> 
+    </div>
+
+    <div class="card mt-2">
+        <h4 class="card-title text-center mt-3">DATOS DE ESTUDIANTE</h4>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table">
+                
+                <tbody>
+                    <tr class="text-center">
+                        <td class="bg-dark text-light">APELLIDOS</td>
+                        <td class="bg-dark text-light">NOMBRES</td>
+                        <td class="bg-dark text-light">SEXO</td>
+                        <td class="bg-dark text-light">FECHA DE NACIMIENTO</td>
+                    </tr>   
+                    <tr>
+                        <td>{{alumno.apellidos.toUpperCase()}}</td>
+                        <td>{{alumno.nombres.toUpperCase()}}</td>
+                        <td>{{alumno.sexo.toUpperCase()}}</td>
+                        <td>{{alumno.fechaNacimiento.toUpperCase()}}</td>
+                    </tr>      
+                    <tr class="text-center">
+                        <td class="bg-dark text-light">EDAD</td>
+                        <td class="bg-dark text-light">ESTADO CIVIL</td>
+                        <td class="bg-dark text-light">DOC. IDENTIDAD</td>
+                        <td class="bg-dark text-light">GRADO DE INSTRUCCION</td>
+                    </tr>   
+                    <tr>
+                        <td>{{alumno.edad}}</td>
+                        <td>{{alumno.estadoCivil.toUpperCase()}}</td>
+                        <td>{{alumno.documentoIdentidad.toUpperCase()}}</td>
+                        <td>{{alumno.gradoInstruccion.toUpperCase()}}</td>
+                    </tr> 
+                    <tr class="text-center">
+                        <td class="bg-dark text-light">TIPO DE ESTUDIO</td>
+                        <td class="bg-dark text-light">INSTITUCION DONDE ESTUDIO</td>
+                        <td class="bg-dark text-light">LUGAR</td>
+                        <td class="bg-dark text-light">DIRECCION DE RESIDENCIA</td>
+                    </tr>   
+                    <tr>
+                        <td>{{alumno.tipoEstudio.toUpperCase()}}</td>
+                        <td>{{alumno.institucionProcedencia.toUpperCase()}}</td>
+                        <td>{{alumno.lugarInstitucionProcedencia.toUpperCase()}}</td>
+                        <td>{{alumno.direccionRecidencia.toUpperCase()}}</td>
+                    </tr> 
+                    <tr class="text-center">
+                        <td class="bg-dark text-light">DISTRITO DE RECIDENCIA</td>
+                        <td class="bg-dark text-light">DEPARTAMENTO DE NACIMIENTO</td>
+                        <td class="bg-dark text-light">PROVINCIA</td>
+                        <td class="bg-dark text-light">DISTRITO</td>
+                    </tr>   
+                    <tr>
+                        <td>{{alumno.distritoRecidencia.toUpperCase()}}</td>
+                        <td>{{alumno.departamentoNacimiento.toUpperCase()}}</td>
+                        <td>{{alumno.provinciaNacimiento.toUpperCase()}}</td>
+                        <td>{{alumno.distritoNacimiento.toUpperCase()}}</td>
+                    </tr> 
+                    <tr class="text-center">
+                        <td class="bg-dark text-light">LUGAR</td>
+                        <td class="bg-dark text-light">TELEFONO DE REFERENCIA</td>
+                        <td class="bg-dark text-light">CELULAR</td>
+                        <td class="bg-dark text-light">CORREO ELECTRONICO</td>
+                    </tr>   
+                    <tr>
+                        <td>{{alumno.lugarNacimiento.toUpperCase()}}</td>
+                        <td>{{alumno.telefonoReferencia.toUpperCase()}}</td>
+                        <td>{{alumno.celular.toUpperCase()}}</td>
+                        <td>{{alumno.correo.toUpperCase()}}</td>
+                    </tr>        
+                </tbody>
+            </table>
+          </div>
+          
+         
+           
+        </div> 
+    </div>
+
+    <div class="card mt-2">
+        <h4 class="card-title text-center mt-3">DATOS ACADEMICOS</h4>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table">
+                
+                <tbody>
+                    <tr class="text-center">
+                        <td class="bg-dark text-light">CICLO</td>
+                        <td class="bg-dark text-light">ESPECIALIDAD/OPCION OCUPACIONAL</td>
+                        <td class="bg-dark text-light">MODULO Y/O CAPACITACION</td>
+                        <td class="bg-dark text-light">TURNO</td>
+                    </tr>   
+                    <tr>
+                        <td>{{alumno.ciclo.toUpperCase()}}</td>
+                        <td>{{alumno.especialidad.toUpperCase()}}</td>
+                        <td>{{alumno.modulo.toUpperCase()}}</td>
+                        <td>{{alumno.turno.toUpperCase()}}</td>
+                    </tr>      
+                    <tr class="text-center">
+                        <td class="bg-dark text-light">HORARIO</td>
+                        <td class="bg-dark text-light">DURACION</td>
+                        <td class="bg-dark text-light"></td>
+                        <td class="bg-dark text-light"></td>
+                    </tr>   
+                    <tr>
+                        <td>{{alumno.horario.toUpperCase()}}</td>
+                        <td>{{alumno.duracion.toUpperCase()}}</td>
+                       
+                    </tr> 
+                     
+                </tbody>
+            </table>
+          </div>
+          
+         
+           
+        </div> 
+    </div>
+    <button type="button" class="btn btn-danger mt-3 float-end mb-3 me-2" routerLink="/">Volver</button>
+        
+    <button type="button" class="btn btn-primary mt-3 float-end mb-3 me-2" [routerLink]="['/editaralumno',alummnoId]">Editar</button>
+                
+</div>
+    

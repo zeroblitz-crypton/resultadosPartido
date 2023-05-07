@@ -7,12 +7,16 @@ import { AppComponent } from './app.component';
 import { ListadoPartidosComponent } from './components/listado-partidos/listado-partidos.component';
 import { CrearPartidoComponent } from './components/crear-partido/crear-partido.component';
 import { HttpClientModule } from '@angular/common/http';
+import { RevisarAlumnoComponent } from './components/revisar-alumno/revisar-alumno.component';
+import { EditaralumnoComponent } from './components/editaralumno/editaralumno.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListadoPartidosComponent,
-    CrearPartidoComponent
+    CrearPartidoComponent,
+    RevisarAlumnoComponent,
+    EditaralumnoComponent
   ],
   imports: [
     BrowserModule,

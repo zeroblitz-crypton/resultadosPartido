@@ -1,12 +1,12 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Partido } from '../models/Partido'
+import { FichaAlumno } from '../models/fichaAlumno'
 @Injectable({
   providedIn: 'root'
 })
 export class PartidoServicesService {
-  uri='http://localhost:3000/partido/'
+  uri='http://localhost:3000/registroAlumno/'
   constructor(private http:HttpClient) {
     
    }
@@ -17,8 +17,11 @@ export class PartidoServicesService {
    eliminarPartido(id:string):Observable<any>{
     return this.http.delete(this.uri+id)
    }
-   guardarPartido(partido:Partido):Observable<any>{
-    return this.http.post(this.uri,partido)
+   guardarPartido(fiachaAlumno:FichaAlumno):Observable<any>{
+    return this.http.post(this.uri,fiachaAlumno)
    }
+   getAlumno(id:String): Observable<any>{
+    return this.http.get(this.uri+id)
+ }
 
 }

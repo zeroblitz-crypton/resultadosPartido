@@ -3,91 +3,40 @@
         
         <div class="card-body">
            
-            <h3 class="titulo">REGISTRAR ALUMNO</h3>
+            <h3 class="titulo">REGISTRAR EQUIPO</h3>
             <div class="mb-3">
           
-              <form class="mt-3" action="" (ngSubmit)="registrarPartido()" [formGroup]="fichaAlumnnoForm" >
+              <form class="mt-3" action="" (ngSubmit)="registrarCelular()" [formGroup]="celularesForm" >
 
                 <input type="text"
-                class="form-control mt-2" formControlName="nombres" placeholder="Nombres">   
+                class="form-control mt-2" formControlName="nombreCelular" placeholder="Nombre del equipo">   
 
                 <input type="text"
-                class="form-control mt-2" formControlName="apellidos" placeholder="Apellidos">   
+                class="form-control mt-2" formControlName="camaraPosterior" placeholder="Camara Posterior">   
 
                 <input type="text"
-                class="form-control mt-2" formControlName="sexo" placeholder="Sexo">                       
-
-                <input type="date"
-                class="form-control mt-2" formControlName="fechaNacimiento" placeholder="Fecha de nacimiento">   
-
-                <input type="number"
-                class="form-control mt-2" formControlName="edad" placeholder="Edad">   
+                class="form-control mt-2" formControlName="camaraFrontal" placeholder="Camara Frontal">                       
 
                 <input type="text"
-                class="form-control mt-2" formControlName="estadoCivil" placeholder="Estado civil">   
+                class="form-control mt-2" formControlName="sizePantalla" placeholder="Tamaño de pantalla">   
 
                 <input type="text"
-                class="form-control mt-2" formControlName="documentoIdentidad" placeholder="Documento de identidad">   
+                class="form-control mt-2" formControlName="sizeRam" placeholder="Ram">   
 
                 <input type="text"
-                class="form-control mt-2" formControlName="gradoInstruccion" placeholder="Grado de instruccion">   
+                class="form-control mt-2" formControlName="sizeStorage" placeholder="Almacenamiento">   
 
                 <input type="text"
-                class="form-control mt-2" formControlName="tipoEstudio" placeholder="Tipo de estudio">   
+                class="form-control mt-2" formControlName="sizeBatery" placeholder="Bateria">   
 
                 <input type="text"
-                class="form-control mt-2" formControlName="institucionProcedencia" placeholder="Procedencia de institucion">   
+                class="form-control mt-2" formControlName="nombreProcesador" placeholder="Procesador">   
 
                 <input type="text"
-                class="form-control mt-2" formControlName="lugarInstitucionProcedencia" placeholder="Lugar de institucion">   
-
-                <input type="text"
-                class="form-control mt-2" formControlName="direccionRecidencia" placeholder="Direccion de residencia">   
-
-                <input type="text"
-                class="form-control mt-2" formControlName="distritoRecidencia" placeholder="Distrito de residencia">   
-
-                <input type="text"
-                class="form-control mt-2" formControlName="departamentoNacimiento" placeholder="Departamento de nacimiento">   
-
-                <input type="text"
-                class="form-control mt-2" formControlName="provinciaNacimiento" placeholder="Provincia de nacimiento">   
-
-                <input type="text"
-                class="form-control mt-2" formControlName="distritoNacimiento" placeholder="Distrito de nacimiento">   
-
-                <input type="text"
-                class="form-control mt-2" formControlName="lugarNacimiento" placeholder="Lugar de nacimiento">   
-
-                <input type="text"
-                class="form-control mt-2" formControlName="telefonoReferencia" placeholder="Telefono de referencia">   
-
-                <input type="text"
-                class="form-control mt-2" formControlName="celular" placeholder="Celular">   
-
-                <input type="text"
-                class="form-control mt-2" formControlName="correo" placeholder="Correo electronico">   
-
-                <input type="text"
-                class="form-control mt-2" formControlName="ciclo" placeholder="Ciclo">   
-
-                <input type="text"
-                class="form-control mt-2" formControlName="especialidad" placeholder="Especialidad">   
-
-                <input type="text"
-                class="form-control mt-2" formControlName="modulo" placeholder="Modulo">   
-
-                <input type="text"
-                class="form-control mt-2" formControlName="turno" placeholder="Turno"> 
-                
-                <input type="text"
-                class="form-control mt-2" formControlName="horario" placeholder="Horario"> 
-
-                <input type="text"
-                class="form-control mt-2" formControlName="duracion" placeholder="Duracion"> 
+                class="form-control mt-2" formControlName="imagen" placeholder="URL imagen">   
 
 
-                <button [disabled]="fichaAlumnnoForm.invalid" type="submit" class="btn btn-success mt-3 float-start">Guardar</button>
+                <button [disabled]="celularesForm.invalid" type="submit" class="btn btn-success mt-3 float-start">Guardar</button>
                 <button type="button" class="btn btn-danger mt-3 float-end" routerLink="/">volver</button>
                 
               </form>          

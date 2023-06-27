@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { FichaAlumno } from 'src/app/models/fichaAlumno';
+import { CelularesService } from 'src/app/services/celulares.service';
 import { PartidoServicesService } from 'src/app/services/partido-services.service';
 
 @Component({
@@ -9,23 +10,34 @@ import { PartidoServicesService } from 'src/app/services/partido-services.servic
   styleUrls: ['./revisar-alumno.component.scss']
 })
 export class RevisarAlumnoComponent implements OnInit  {
-  alummnoId:any
-  alumno:any
-  constructor(private partidosService:PartidoServicesService,private _route:ActivatedRoute){
-  this.alummnoId=this._route.snapshot.paramMap.get('id')
-  this.obtenerPartidos(this.alummnoId)
+  celularId:any
+  celular:any
+  constructor(private celularService:CelularesService,private _route:ActivatedRoute,
+    private router:Router
+    
+    
+    ){
+  this.celularId=this._route.snapshot.paramMap.get('id')
+  this.obternerCelular(this.celularId)
     
   }
   ngOnInit(): void {
     
   }
   
-  obtenerPartidos(id:string){
-    this.partidosService.getAlumno(id).subscribe(res=>{
-      this.alumno=res
+  obternerCelular(id:string){
+    this.celularService.getCelular(id).subscribe(res=>{
+      this.celular=res
       
-      console.log(this.alumno);
+      console.log(this.celular);
       
     })
   }
+  eliminarCelular(){
+    this.celularService.eliminarCelulares(this.celularId).subscribe(data=>{
+      this.router.navigate(['/'])
+    })
+    
+  }
+  
 }

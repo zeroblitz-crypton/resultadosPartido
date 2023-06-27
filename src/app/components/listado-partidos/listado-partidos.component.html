@@ -3,7 +3,7 @@
     
     <div class="card-body">
        
-        <h3 class="titulo">LISTADO DE ALUMNOS</h3>
+        <h3 class="titulo">LISTADO DE EQUIPOS</h3>
         <button class="btn btn-success float-end" routerLink="/crear-partido">NUEVO</button><br>
             <div class="table-responsive mt-3 mb-3">               
 
@@ -11,33 +11,24 @@
                     <input type="text" class="form-control" (keyup)="searchPartido()" [(ngModel)]="searchText" placeholder="Buscar" aria-label="Buscar" aria-describedby="basic-addon2">
                     <span class="input-group-text bg-light" id="basic-addon2"><i (click)="limpiarCampo()" style="cursor: pointer;border:0;outline:none;" class="text-danger fa-sharp fa-solid fa-circle-xmark"></i></span>
                   </div>
-                <table class="table ">
-                    <thead>
-                        <tr>
-                            <th class="text-center" scope="col">NOMBRES</th>
-                            <th class="text-center" scope="col">APELLIDOS</th>
-                            <th class="text-center" scope="col">DNI</th>
-                            
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="text " *ngFor="let alumno of listadoFichaAlumno">
-                            <td class="text-center">{{alumno.nombres.toUpperCase()}}</td>
-                            <td class="text-center">{{alumno.apellidos.toUpperCase()}}</td>
-                            <td class="text-center">{{alumno.documentoIdentidad}}</td>
-                            <td class="text-center">
-                                <i class="fa-solid fa-eye me-2 text-info" [routerLink]="['/revisar-alumno',alumno._id]" style="cursor: pointer;"></i>
-                                <i class="fa-solid fa-pencil me-2 text-primary" [routerLink]="['/editaralumno',alumno._id]"editaralumno style="cursor: pointer;"></i>
-                                <i class="fa-solid fa-trash text-danger" (click)="eliminarAlumno(alumno)" style="cursor: pointer;"></i>
-                            </td>
-                        </tr>
+               
+            </div>
+            <span class="badge rounded-pill text-bg-dark ml-4">Cantidad de celulares: {{listadoCelulares.length}}</span>
+        <div class="row">
+            
+            <div class="col-3 col-sm-3  " *ngFor="let item of listadoCelulares">
+                <div class="card m-3" style="border-style: none;cursor: pointer;" [routerLink]="['/revisar-alumno',item._id]" >
+                    <img class="card-img-top" [src]="item.imagen" style="border-style: none;">
+                    <div class="card-body text-center"  style="border-style: none;">
+                        <h4 class="card-title">{{item.nombreCelular}}</h4>
                         
-                    </tbody>
-                </table>
+                    </div>
+                </div>
             </div>
             
         </div>
+            
+    </div>
   
 </div>
 </div>

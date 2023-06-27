@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Partido } from 'src/app/models/Partido';
 import { PartidoServicesService } from 'src/app/services/partido-services.service';
 import { NgModule } from '@angular/core';
-import { FichaAlumno } from 'src/app/models/fichaAlumno';
+import { Celulares } from 'src/app/models/celulares';
+import { CelularesService } from 'src/app/services/celulares.service';
 
 @Component({
   selector: 'app-listado-partidos',
@@ -10,10 +11,10 @@ import { FichaAlumno } from 'src/app/models/fichaAlumno';
   styleUrls: ['./listado-partidos.component.scss']
 })
 export class ListadoPartidosComponent implements OnInit {
-  listadoFichaAlumno:FichaAlumno[]=[]
-  auxlistadoFichaAlumno:FichaAlumno[]=[]
+  listadoCelulares:Celulares[]=[]
+  auxlistadoCelulares:Celulares[]=[]
   searchText=""
-  constructor(private partidosService:PartidoServicesService){
+  constructor(private celularService:CelularesService){
 
   }
 
@@ -22,10 +23,10 @@ export class ListadoPartidosComponent implements OnInit {
   }
 
   obtenerPartidos(){
-    this.partidosService.getPartidos().subscribe(res=>{
-      this.listadoFichaAlumno=res
-      this.auxlistadoFichaAlumno=res
-      console.log(this.auxlistadoFichaAlumno);
+    this.celularService.getCelulares().subscribe(res=>{
+      this.listadoCelulares=res
+      this.auxlistadoCelulares=res
+      console.log(this.auxlistadoCelulares);
       
     })
   }
@@ -37,23 +38,19 @@ export class ListadoPartidosComponent implements OnInit {
 
    return inicialMayuscula+resto
   }
-  eliminarPartido(partido:any){
-    this.partidosService.eliminarPartido(partido._id).subscribe(data=>{
+  eliminarCelular(partido:any){
+    this.celularService.eliminarCelulares(partido._id).subscribe(data=>{
       this.obtenerPartidos()
     })
     
   }
   searchPartido(){
-  this.listadoFichaAlumno = this.auxlistadoFichaAlumno.filter(partido=>partido.nombres.toLowerCase().includes(this.searchText.toLowerCase()) || partido.apellidos.toLowerCase().includes(this.searchText.toLowerCase()) || partido.documentoIdentidad.toLowerCase().includes(this.searchText.toLowerCase()))
+  this.listadoCelulares = this.auxlistadoCelulares.filter(celular=>celular.nombreCelular.toLowerCase().includes(this.searchText.toLowerCase()) || celular.sizeRam.toLowerCase().includes(this.searchText.toLowerCase()) || celular.sizeBatery.toLowerCase().includes(this.searchText.toLowerCase()))
   }
   limpiarCampo(){
     this.searchText=""
     this.obtenerPartidos()
   }
-  eliminarAlumno(alumno:any){
-    this.partidosService.eliminarPartido(alumno._id).subscribe(data=>{
-      this.obtenerPartidos()
-    })
-  }
+  
 
 }
